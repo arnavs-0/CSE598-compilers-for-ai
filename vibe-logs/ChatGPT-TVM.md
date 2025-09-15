@@ -1,10 +1,5 @@
 # TVM paper summary
 
-**User:** Arnav Shah (sarn248@gmail.com)  
-**Created:** 9/9/2025 23:03:21  
-**Updated:** 9/10/2025 13:07:05  
-**Exported:** 9/10/2025 13:13:34  
-
 ## Prompt:
 1802.04799v3.pdf
 

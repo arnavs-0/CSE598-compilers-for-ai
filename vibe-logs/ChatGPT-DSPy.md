@@ -1,10 +1,5 @@
 # DSPy paper summary
 
-**User:** Arnav Shah
-**Created:** 9/9/2025 22:40:55  
-**Updated:** 9/9/2025 22:53:29  
-**Exported:** 9/9/2025 22:58:42  
-
 ## Prompt:
 2310.03714v1.pdf
 
