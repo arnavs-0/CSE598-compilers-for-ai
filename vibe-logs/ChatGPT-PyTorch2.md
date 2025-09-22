@@ -1,10 +1,5 @@
 # PyTorch 2 comparison analysis
 
-**User:** Arnav Shah (sarn248@gmail.com)  
-**Created:** 9/22/2025 12:36:35  
-**Updated:** 9/22/2025 12:43:37  
-**Exported:** 9/22/2025 12:44:02  
-
 ## Prompt:
 3620665.3640366.pdf
 
