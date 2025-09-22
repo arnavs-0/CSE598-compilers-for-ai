@@ -7,3 +7,4 @@
 | [Relay](https://arxiv.org/abs/1904.08368) | [ChatGPT-Relay.md](./vibe-logs/ChatGPT-Relay.md) |
 | [MTP](https://arxiv.org/pdf/2405.08965)   | [ChatGPT-MTP.md](./vibe-logs/ChatGPT-MTP.md)   |
 | [GEPA](https://arxiv.org/pdf/2507.19457) | [ChatGPT-GEPA.md](./vibe-logs/ChatGPT-GEPA.md) |
+| [PyTorch2](https://dl.acm.org/doi/pdf/10.1145/3620665.3640366) | [ChatGPT-PyTorch2.md](./vibe-logs/ChatGPT-PyTorch2.md) |
