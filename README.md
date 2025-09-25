@@ -9,3 +9,5 @@
 | [GEPA](https://arxiv.org/pdf/2507.19457) | [ChatGPT-GEPA.md](./vibe-logs/ChatGPT-GEPA.md) |
 | [PyTorch2](https://dl.acm.org/doi/pdf/10.1145/3620665.3640366) | [ChatGPT-PyTorch2.md](./vibe-logs/ChatGPT-PyTorch2.md) |
 | [TorchBench](https://arxiv.org/pdf/2304.14226) | [ChatGPT-TorchBench.md](./vibe-logs/ChatGPT-TorchBench.md) |
+| [TorchTitan](https://arxiv.org/pdf/2410.06511) | [ChatGPT-TorchTitan.md](./vibe-logs/ChatGPT-TorchTitan.md) |
+| [ECLIP](https://arxiv.org/pdf/2506.12598) | [ChatGPT-ECLIP.md](./vibe-logs/ChatGPT-ECLIP.md) |
