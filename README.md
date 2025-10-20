@@ -13,3 +13,5 @@
 | [ECLIP](https://arxiv.org/pdf/2506.12598) | [ChatGPT-ECLIP.md](./vibe-logs/ChatGPT-ECLIP.md) |
 | [Triton](https://www.eecs.harvard.edu/~htk/publication/2019-mapl-tillet-kung-cox.pdf) | [ChatGPT-Triton.md](./vibe-logs/ChatGPT-Triton.md) |
 | [GEAK](https://arxiv.org/pdf/2507.23194) | [ChatGPT-GEAK.md](./vibe-logs/ChatGPT-GEAK.md) |
+| [OpFusion](https://arxiv.org/abs/2301.13062) | [ChatGPT-OpFusion.md](./vibe-logs/ChatGPT-OpFusion.md) |
+| [MemSafeXLA](https://arxiv.org/abs/2206.14148) | [ChatGPT-MemSafeXLA.md](./vibe-logs/ChatGPT-MemSafeXLA.md) |
