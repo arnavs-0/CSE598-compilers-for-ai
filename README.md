@@ -17,4 +17,5 @@
 | [MemSafeXLA](https://arxiv.org/abs/2206.14148) | [ChatGPT-MemSafeXLA.md](./vibe-logs/ChatGPT-MemSafeXLA.md) |
 | [MLIR](https://arxiv.org/pdf/2002.11054) | [ChatGPT-MLIR.md](./vibe-logs/ChatGPT-MLIR.md) |
 | [Glow](https://arxiv.org/pdf/1805.00907) | [ChatGPT-Glow.md](./vibe-logs/ChatGPT-Glow.md) |
-|
+| [vLLM](https://arxiv.org/abs/2309.06180) | [ChatGPT-vLLM.md](./vibe-logs/ChatGPT-vLLM.md) |
+| [Jenga](https://arxiv.org/abs/2503.18292) | [ChatGPT-Jenga.md](./vibe-logs/ChatGPT-Jenga.md) |
