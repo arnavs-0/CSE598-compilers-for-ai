@@ -15,3 +15,6 @@
 | [GEAK](https://arxiv.org/pdf/2507.23194) | [ChatGPT-GEAK.md](./vibe-logs/ChatGPT-GEAK.md) |
 | [OpFusion](https://arxiv.org/abs/2301.13062) | [ChatGPT-OpFusion.md](./vibe-logs/ChatGPT-OpFusion.md) |
 | [MemSafeXLA](https://arxiv.org/abs/2206.14148) | [ChatGPT-MemSafeXLA.md](./vibe-logs/ChatGPT-MemSafeXLA.md) |
+| [MLIR](https://arxiv.org/pdf/2002.11054) | [ChatGPT-MLIR.md](./vibe-logs/ChatGPT-MLIR.md) |
+| [Glow](https://arxiv.org/pdf/1805.00907) | [ChatGPT-Glow.md](./vibe-logs/ChatGPT-Glow.md) |
+|
