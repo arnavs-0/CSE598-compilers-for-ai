@@ -1,10 +1,5 @@
 # Glow deprecation overview
 
-**User:** Arnav Shah (sarn248@gmail.com)  
-**Created:** 10/20/2025 20:01:12  
-**Updated:** 10/26/2025 20:05:04  
-**Exported:** 10/27/2025 13:13:28  
-
 ## Prompt:
 1805.00907v3.pdf
 
