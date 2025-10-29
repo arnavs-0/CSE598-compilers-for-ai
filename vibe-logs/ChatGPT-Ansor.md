@@ -1,4 +1,4 @@
-# Walk through paper 
+# Walk through paper
 
 ## Prompt:
 2006.06762v5.pdf
@@ -326,7 +326,7 @@ Do you want me to make that diagram?
 Yes, make the diagram
 
 ## Response:
-![Generated image](https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-7eb0-622f-bf22-dabf4fc7cb47/raw?se=2025-09-17T21%3A58%3A54Z&sp=r&sv=2024-08-04&sr=b&scid=6f7d0830-bd62-510a-b0d5-e4ed26da0a52&skoid=e9d2f8b1-028a-4cff-8eb1-d0e66fbefcca&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-17T17%3A37%3A36Z&ske=2025-09-18T17%3A37%3A36Z&sks=b&skv=2024-08-04&sig=dhxEj9uKoaBTOmRy0d4sFMjpaeqWuwFNzwZ4tGP4l6Q%3D)
+![Generated image](https://chatgpt.com/backend-api/estuary/content?id=file_000000007eb0622fbf22dabf4fc7cb47&ts=489375&p=fs&cid=1&sig=dcc176022254f3596daab39005c03d0f3c831d4e9d853dabd14ca6f78c121f5d&v=0)
 
 ## Prompt:
 Give me an example of a situation in which I would want to use this
@@ -569,6 +569,245 @@ Annotation then chooses:
 If you want, I can **draw a visual diagram** showing how a DAG → Sketch → Annotated Program → Final Optimized Kernel flows through Ansor.
 
 Do you want me to make that diagram?
+
+## Prompt:
+So why is this not used more often?
+
+## Response:
+Excellent question — and honestly, it’s one that a lot of systems researchers talk about.
+
+**Ansor is powerful**, but it’s not _everywhere_ yet because of a mix of **engineering complexity**, **integration challenges**, and **industry inertia**. Let’s unpack that clearly.
+
+* * *
+
+**1\. It Solves a Hard Problem — But Adds Complexity**
+------------------------------------------------------
+
+Ansor’s approach (automatic sketch generation + evolutionary tuning) is **computationally heavy** during the tuning phase.
+
+*   To get optimal results, Ansor may run **thousands of program measurements** on the target hardware.
+*   That means it can take **hours or days** to tune a full model if you want the best performance.
+*   For big models or hardware clusters, this can be costly in developer time and compute.
+
+So while it _saves manual engineering_, it trades that for **offline tuning time** — something not every company wants to spend resources on.
+
+* * *
+
+**2\. Integration Into Production Frameworks Is Nontrivial**
+------------------------------------------------------------
+
+Most production ML stacks (TensorFlow, PyTorch, ONNX Runtime) already depend on **vendor libraries** like cuDNN, MKL-DNN, and TensorRT that are:
+
+*   Stable
+*   Battle-tested
+*   Maintained directly by hardware vendors
+
+Integrating Ansor means:
+
+*   Replacing parts of that backend (compiler, runtime, kernel selection logic)
+*   Handling differences in operator semantics, memory layouts, and backend-specific codegen
+
+That’s **non-trivial** engineering for large systems, especially since frameworks already have highly tuned kernels for mainstream workloads.
+
+* * *
+
+**3\. Vendor Lock-In Incentives**
+---------------------------------
+
+Hardware vendors (NVIDIA, Intel, ARM) have strong incentives to push their **proprietary libraries** (e.g., cuDNN, oneDNN) because:
+
+*   They control the hardware.
+*   They can release finely tuned, proprietary kernels that show benchmark wins.
+
+Ansor is **hardware-agnostic and open-source**, which is great for research, but **less aligned** with vendor ecosystems that prefer proprietary optimization stacks.
+
+* * *
+
+**4\. Research Systems Lag Behind Productization**
+--------------------------------------------------
+
+Ansor is primarily a **research system** built on TVM (an academic + open-source compiler).  
+In research:
+
+*   It’s been very influential — its ideas shaped **TVM’s next-generation auto-scheduler** and inspired **similar systems** like Meta’s TensorComprehensions and OpenAI’s Triton.
+*   But turning a research compiler into a **production compiler** that runs at scale (with debugging tools, determinism, versioning, etc.) takes years.
+
+That process is ongoing — parts of Ansor’s design _are_ being adopted gradually.
+
+* * *
+
+**5\. Dynamic Models Are Hard**
+-------------------------------
+
+Ansor excels at **static computation graphs** (e.g., CNNs, BERT).  
+But it struggles with **dynamic models** — ones that change control flow or tensor shapes at runtime (e.g., some NLP models or reinforcement learning policies).
+
+That’s because:
+
+*   Ansor needs to know the computation DAG ahead of time to generate sketches.
+*   Dynamic shape or control flow breaks static assumptions → needs new research (which is happening now).
+
+* * *
+
+**6\. Industry Is Moving Gradually Toward It**
+----------------------------------------------
+
+Although Ansor itself isn’t a drop-in tool in PyTorch or TensorFlow yet, its **core ideas are being absorbed**:
+
+*   **TVM’s auto-scheduler** (based on Ansor) is used in production by companies like **OctoML**.
+*   **Meta’s Glow** and **OpenAI’s Triton** use similar automatic kernel generation.
+*   **NVIDIA’s cuTensorNet** and **TensorRT** are adding more dynamic tuning internally — essentially converging on the same principles.
+
+So, it’s not unused — it’s **just not directly visible** to end users because it’s still being integrated into toolchains.
+
+* * *
+
+### **Summary**
+
+| **Reason** | **Impact** |
+| --- | --- |
+| High tuning cost | Great for static models, less ideal for quick iterations |
+| Integration complexity | Hard to plug into big frameworks |
+| Vendor ecosystems | Proprietary kernels dominate |
+| Research–production gap | Ongoing adoption in new compilers |
+| Dynamic models | Still an open research area |
+
+* * *
+
+In short:  
+Ansor is **cutting-edge compiler technology** that **redefines how we optimize deep learning**, but it’s still in the **transition phase from research to production**.
+
+It’s already influencing the next generation of ML compilers — and you’ll likely see its concepts in the systems you use in the next few years.
+
+* * *
+
+Would you like me to show you **how Ansor’s ideas evolved into modern compiler stacks** (like TVM’s auto-scheduler, Triton, and Meta’s AITemplate)? That’s a neat lineage.
+
+## Prompt:
+so why was this made if it cant compete, whats the novelty?
+
+## Response:
+That’s a sharp and very fair question — and it gets to the heart of what makes **Ansor** important as a _research breakthrough_, even if it’s not yet the “mainstream” production tool.
+
+Let’s unpack it carefully.
+
+* * *
+
+**1\. The Goal Wasn’t to Compete With cuDNN — It Was to Eliminate the Manual Labor**
+------------------------------------------------------------------------------------
+
+Before Ansor (pre-2020), **high-performance deep learning compilers** like TVM, AutoTVM, and Tensor Comprehensions all relied on **human-written templates**.
+
+*   Every operator (Conv2D, MatMul, etc.) required a **handcrafted kernel template** per hardware backend (CPU, GPU, ARM…).
+*   Writing and tuning those templates was:
+    *   **Extremely time-consuming** (thousands of lines per operator)
+    *   **Hard to maintain** across new devices
+    *   **Not generalizable** to new or custom operators
+
+So the novelty wasn’t _“beat cuDNN today”_, it was:
+
+> **“Can we automatically discover the kinds of high-performance tensor programs that humans or vendors spend months engineering — without any manual templates?”**
+
+And Ansor succeeded at that.
+
+* * *
+
+**2\. The Key Novelty: Hierarchical, Template-Free Search Space**
+-----------------------------------------------------------------
+
+Ansor introduced a **fundamentally new way to search for performant code**.
+
+### Before Ansor:
+
+*   AutoTVM → required **manual templates**
+*   Halide auto-scheduler → **sequentially** builds partial programs (bad at scaling)
+
+### Ansor’s idea:
+
+*   Build a **hierarchical search space**:
+    *   **High-level sketches** capture structure (tiling, fusion, caching)
+    *   **Low-level annotations** fill in tuning parameters
+*   Sample **complete programs** from this space, then fine-tune them with evolutionary search.
+
+This solved two long-standing issues:
+
+1.  It **removed the need for human templates**.
+2.  It **searched a much larger space** while remaining efficient.
+
+That’s a massive conceptual leap in compiler automation.
+
+* * *
+
+**3\. Another Novelty: End-to-End Task Scheduling**
+---------------------------------------------------
+
+Ansor didn’t just tune _one operator_ — it introduced a **task scheduler** that:
+
+*   Tunes _multiple subgraphs_ in a DNN together.
+*   Uses a **gradient-descent-based algorithm** to prioritize the layers that most affect end-to-end latency.
+*   Learns _where_ to spend tuning time — something no previous system did.
+
+This moves optimization from “local tuning” (one op at a time) to **“global optimization”** across the whole model.
+
+* * *
+
+**4\. Empirical Results: It _Did_ Compete — Just in a Different Domain**
+------------------------------------------------------------------------
+
+Ansor wasn’t beating cuDNN on every convolution — but:
+
+*   It **matched or outperformed AutoTVM**, **Halide**, and **FlexTensor** (the best open systems at the time).
+*   It **beat vendor libraries** on:
+    *   Custom operators (e.g., capsule convolution, matrix 2-norm)
+    *   Unusual tensor shapes
+    *   Edge hardware (ARM CPUs, embedded devices)
+*   It showed **up to 3.8× CPU speedup** and **1.7× GPU speedup** over the previous state of the art in _automated systems_.
+
+So it _did_ compete — just not as a drop-in replacement for NVIDIA’s hand-engineered cuDNN, which has teams of hardware engineers behind it.
+
+* * *
+
+**5\. Broader Novelty: It Shifted the Direction of the Field**
+--------------------------------------------------------------
+
+After Ansor, nearly every next-generation ML compiler incorporated its ideas:
+
+| System | Inspired by Ansor concept | Key Similarity |
+| --- | --- | --- |
+| **TVM Auto-Scheduler (2021)** | Direct successor | Uses sketches + learned cost model |
+| **OpenAI Triton** | Similar decoupling | Structure + parameter separation |
+| **Meta AITemplate / Glow** | Subgraph-level optimization | Graph-aware scheduling |
+| **MLIR (Google)** | Hierarchical IR design | Structural decomposition |
+
+So, Ansor’s real impact was **conceptual**:  
+It proved that _fully automatic, template-free, search-based compilation_ for deep learning was possible — and effective.
+
+* * *
+
+**6\. The Summary**
+-------------------
+
+You can think of Ansor as **the bridge between hand-tuned kernels and fully automatic ML compilers**:
+
+| **Era** | **Approach** | **Limitation** | **Ansor’s Role** |
+| --- | --- | --- | --- |
+| Vendor libraries | Hand-coded kernels | Not portable, not extensible | Showed automation can reach similar performance |
+| Template-based auto-tuners | Manual search spaces | Requires expertise, small space | Removed manual templates entirely |
+| Sequential auto-schedulers | Beam search of partial programs | Inefficient and inaccurate | Introduced hierarchical full-program sampling |
+| Post-Ansor compilers | Automated + ML-driven | Now industry trend | Built on Ansor’s principles |
+
+* * *
+
+### 🧠 **So the novelty:**
+
+Ansor wasn’t made to beat cuDNN directly —  
+it was made to **eliminate the human from the tuning loop** and prove that **a compiler can autonomously discover performant code**.
+
+And that idea fundamentally changed how ML compilers are designed today.
+
+* * *
+
+Would you like me to show a **timeline diagram** that visually traces how Ansor’s ideas influenced later compilers (TVM auto-scheduler → Triton → AITemplate)?
 
 
 
