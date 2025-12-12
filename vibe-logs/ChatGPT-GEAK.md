@@ -1,10 +1,5 @@
 # GEAK purpose overview
 
-**User:** Arnav Shah (sarn248@gmail.com)  
-**Created:** 9/30/2025 18:22:39  
-**Updated:** 9/30/2025 18:28:22  
-**Exported:** 9/30/2025 18:28:44  
-
 ## Prompt:
 2507.23194v1 (1).pdf
 

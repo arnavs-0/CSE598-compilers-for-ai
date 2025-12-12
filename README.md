@@ -20,3 +20,8 @@
 | [Glow](https://arxiv.org/pdf/1805.00907) | [ChatGPT-Glow.md](./vibe-logs/ChatGPT-Glow.md) |
 | [vLLM](https://arxiv.org/abs/2309.06180) | [ChatGPT-vLLM.md](./vibe-logs/ChatGPT-vLLM.md) |
 | [Jenga](https://arxiv.org/abs/2503.18292) | [ChatGPT-Jenga.md](./vibe-logs/ChatGPT-Jenga.md) |
+| [NvidiaAmpere](https://arxiv.org/abs/2208.11174) | [ChatGPT-NvidiaAmpere.md](./vibe-logs/ChatGPT-NvidiaAmpere.md) |
+| [AMDsDTW](https://arxiv.org/abs/2403.06931) | [ChatGPT-AMDsDTW.md](./vibe-logs/ChatGPT-AMDsDTW.md) |
+| [TPUs](https://arxiv.org/abs/2304.01433) | [ChatGPT-TPUs.md](./vibe-logs/ChatGPT-TPUs.md) |
+| [MTIA](https://dl.acm.org/doi/abs/10.1145/3579371.3589348) | [ChatGPT-MTIA.md](./vibe-logs/ChatGPT-MTIA.md) |
+| [MLFleet](https://arxiv.org/pdf/2502.06982) | [ChatGPT-MLFleet.md](./vibe-logs/ChatGPT-MLFleet.md) |

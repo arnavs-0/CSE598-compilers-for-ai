@@ -1,10 +1,5 @@
 # Triton paper overview
 
-**User:** Arnav Shah (sarn248@gmail.com)  
-**Created:** 9/29/2025 12:21:14  
-**Updated:** 9/29/2025 12:25:47  
-**Exported:** 9/30/2025 18:28:49  
-
 ## Prompt:
 2019-mapl-tillet-kung-cox.pdf
 

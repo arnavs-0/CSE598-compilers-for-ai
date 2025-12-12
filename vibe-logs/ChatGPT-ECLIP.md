@@ -1,10 +1,5 @@
 # Walkthrough of paper
 
-**User:** Arnav Shah (sarn248@gmail.com)  
-**Created:** 9/24/2025 21:05:01  
-**Updated:** 9/24/2025 21:10:20  
-**Exported:** 9/24/2025 21:10:34  
-
 ## Prompt:
 2506.12598v1.pdf
 

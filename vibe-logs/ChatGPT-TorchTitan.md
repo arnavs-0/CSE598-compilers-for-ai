@@ -1,10 +1,5 @@
 # TorchTitan overview
 
-**User:** Arnav Shah (sarn248@gmail.com)  
-**Created:** 9/24/2025 13:03:00  
-**Updated:** 9/24/2025 14:28:49  
-**Exported:** 9/24/2025 21:10:38  
-
 ## Prompt:
 2410.06511v3.pdf
 

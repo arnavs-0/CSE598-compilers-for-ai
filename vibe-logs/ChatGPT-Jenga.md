@@ -1,10 +1,5 @@
 # Jenga memory management
 
-**User:** Arnav Shah (sarn248@gmail.com)  
-**Created:** 10/27/2025 13:23:14  
-**Updated:** 10/29/2025 0:55:50  
-**Exported:** 10/29/2025 0:56:01  
-
 ## Prompt:
 2503.18292v1.pdf
 
